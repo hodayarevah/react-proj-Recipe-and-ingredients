@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import {Switch} from 'react-router';
+import FormIngredient from "./FormIngredient"
+import MyKitchen from './MyKitchen';
+import Menu from "./Menu"
+import {Route} from 'react-router-dom'
+import FormRecipe from "./FormRecipe"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render(){
+return(
+
+
+  <div>
+    <Menu/>
+<Switch>
+  <Route exact path='/'>
+  <MyKitchen/>
+  </Route>
+  <Route path='/FormIngredient'>
+    <FormIngredient/>
+  </Route>
+  <Route path='/FormRecipe'>
+  <FormRecipe/>
+  </Route>
+</Switch>
+</div>
+  
+);
+  }
+  
 }
 
 export default App;

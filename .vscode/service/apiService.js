@@ -1,0 +1,1 @@
+export const api_production = "https://proj.ruppin.ac.il/igroup25_test1"
